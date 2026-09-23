@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiikawa World 🌸</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink-bg: #fff0f3;
+            --card-bg: #ffffff;
+            --accent-pink: #ff85a1;
+            --text-color: #5c4d51;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--pink-bg);
+            background-image: radial-gradient(#ffb3c1 1px, transparent 1px);
+            background-size: 20px 20px;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 2.5rem 1rem 1rem;
+            background: linear-gradient(180deg, #ffe5ec 0%, var(--pink-bg) 100%);
+        }
+
+        h1 {
+            font-family: 'Fredoka', sans-serif;
+            color: #ff4d6d;
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 0px #ffffff;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #b5838d;
+            margin-top: 0.5rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 20px rgba(255, 182, 193, 0.3);
+            border: 3px solid #ffe5ec;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(255, 133, 161, 0.4);
+        }
+
+        .img-container {
+            overflow: hidden;
+            border-radius: 18px;
+            border: 2px dashed #ffb3c1;
+            padding: 5px;
+            background-color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ffe5ec;
+            color: #ff4d6d;
+            font-family: 'Fredoka', sans-serif;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .btn-info {
+            background: #ff758f;
+            color: white;
+            border: none;
+            font-family: 'Fredoka', sans-serif;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 8px rgba(255, 117, 143, 0.3);
+            margin-top: 0.5rem;
+        }
+
+        .btn-info:hover {
+            background: #ff4d6d;
+            transform: scale(1.05);
+        }
+
+        .extra-info {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px dashed #ffe5ec;
+            text-align: left;
+            font-size: 0.9rem;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .extra-info.active {
+            display: block;
+        }
+
+        .stat-bar {
+            background: #ffe5ec;
+            border-radius: 10px;
+            height: 10px;
+            width: 100%;
+            margin-top: 4px;
+            margin-bottom: 8px;
+            overflow: hidden;
+        }
+
+        .stat-fill {
+            background: #ff758f;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-family: 'Fredoka', sans-serif;
+            color: #ff85a1;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>✨ Chiikawa World Interactivo ✨</h1>
+        <p class="subtitle">¡Haz clic en los botones para descubrir la ficha de cada personaje! 💖</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Personaje 1 -->
+        <div class="card">
+            <span class="badge">Protagonista</span>
+            <div class="img-container">
+                <img src="images/1.webp" alt="Chiikawa Barista">
+            </div>
+            <h3>Chiikawa (ちいかわ)</h3>
+            <button class="btn-info" onclick="toggleInfo('info1')">Ver Ficha Secreta 🔍</button>
+
+            <div id="info1" class="extra-info">
+                <p><strong>Personalidad:</strong> Tímido, de buen corazón y muy llorón, pero extremadamente valiente cuando sus amigos lo necesitan.</p>
+                <p><strong>Comida favorita:</strong> Pudding y Ramen.</p>
+                <div>
+                    Ternura:
+                    <div class="stat-bar"><div class="stat-fill" style="width: 100%;"></div></div>
+                    Valentía:
+                    <div class="stat-bar"><div class="stat-fill" style="width: 60%;"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personaje 2 -->
+        <div class="card">
+            <span class="badge">Mejor Amigo</span>
+            <div class="img-container">
+                <img src="images/2.webp" alt="Hachiware">
+            </div>
+            <h3>Hachiware (ハチワレ)</h3>
+            <button class="btn-info" onclick="toggleInfo('info2')">Ver Ficha Secreta 🔍</button>
+
+            <div id="info2" class="extra-info">
+                <p><strong>Personalidad:</strong> Social, optimista y articulado. Es el único del grupo principal que habla en oraciones completas.</p>
+                <p><strong>Habilidad:</strong> Sabe tocar la guitarra y cantar la canción "Hitorigotto".</p>
+                <div>
+                    Optimismo:
+                    <div class="stat-bar"><div class="stat-fill" style="width: 95%;"></div></div>
+                    Habilidad de Canto:
+                    <div class="stat-bar"><div class="stat-fill" style="width: 85%;"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personaje 3 -->
+        <div class="card">
+            <span class="badge">El Caótico</span>
+            <div class="img-container">
+                <img src="images/3.webp" alt="Usagi">
+            </div>
+            <h3>Usagi (うさぎ)</h3>
+            <button class="btn-info" onclick="toggleInfo('info3')">Ver Ficha Secreta 🔍</button>
+
+            <div id="info3" class="extra-info">
+                <p><strong>Personalidad:</strong> Súper hiperactivo, enérgico y sin miedo a nada. Siempre grita "URAA!!" o "HAHA!!".</p>
+                <p><strong>Rango de Caza:</strong> Tiene un nivel de licencia de caza superior al de Chiikawa y Hachiware.</p>
+                <div>
+                    Energía:
+                    <div class="stat-bar"><div class="stat-fill" style="width: 100%;"></div></div>
+                    Caos:
+                    <div class="stat-bar"><div class="stat-fill" style="width: 90%;"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 4 (Imagen nueva) -->
+        <div class="card">
+            <span class="badge">En el Jardín</span>
+            <div class="img-container">
+                <img src="images/4.webp" alt="Chiikawa en el pasto">
+            </div>
+            <h3>Relax en la Naturaleza</h3>
+            <button class="btn-info" onclick="toggleInfo('info4')">Ver Datos Curiosos 🔍</button>
+
+            <div id="info4" class="extra-info">
+                <p><strong>Dato Relax:</strong> A Chiikawa y sus amigos les encanta acostarse en el pasto a descansar después de un largo día de trabajo y cazar.</p>
+                <p><strong>Significado:</strong> "Chiikawa" significa "Algo pequeño y tierno" (Nanka Chiisakute Kawaii Yatsu).</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        Página Interactiva de Chiikawa | Lista para subir a GitHub 🚀
+    </footer>
+
+    <script>
+        function toggleInfo(id) {
+            const infoBox = document.getElementById(id);
+            infoBox.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
